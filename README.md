@@ -1,6 +1,6 @@
-# Number Formater
+# Number Formatter
 
-**Number Formater** is a JavaScript library built to make it faster and more efficient to use the ECMAScript (Intl) API for number formatting.
+**Number Formatter** is a JavaScript library built to make it faster and more efficient to use the ECMAScript (Intl) API for number formatting.
 
 ## Install
 
@@ -15,7 +15,7 @@ My main idea is that this library will be used client-side in JavaScript project
 ### Format currencies  
 
 ```ts
-import { formatToCurrency } from 'number-format'
+import { formatToCurrency } from '@dany-eduard/number-formater'
 
 const price = formatToCurrency({
   locales: 'es-CO',
@@ -29,7 +29,7 @@ const price = formatToCurrency({
 ### Format percent
 
 ```ts
-import { formatToPercent } from 'number-format'
+import { formatToPercent } from '@dany-eduard/number-formater'
 
 const value = formatToPercent({
   locales: 'es-CO',
@@ -42,7 +42,7 @@ const value = formatToPercent({
 ### Format decimal number
 
 ```ts
-import { formatToDecimal } from 'number-format'
+import { formatToDecimal } from '@dany-eduard/number-formater'
 
 const value = formatToDecimal({
   locales: 'es-CO',

@@ -1,0 +1,42 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.formatToPercent = exports.formatToDecimal = exports.formatToCurrency = void 0;
+const constans_1 = require("./constans");
+/**
+ * Formatting a currency
+ * @param {ICurrencyParans} object
+ * @returns {string} string. Example: $ 98.890.098,00
+ */
+const formatToCurrency = ({ locales = constans_1.Locales.CO, currency = constans_1.Currency.COP, fractionDigits = 0, number, }) => {
+    return new Intl.NumberFormat(locales, {
+        style: 'currency',
+        currency: currency,
+        minimumFractionDigits: fractionDigits,
+    }).format(number);
+};
+exports.formatToCurrency = formatToCurrency;
+/**
+ * Formatting a number to decimal
+ * @param {IDePeParans} object
+ * @returns string
+ */
+const formatToDecimal = ({ locales = constans_1.Locales.CO, fractionDigits = 0, number, }) => {
+    return new Intl.NumberFormat(locales, {
+        style: 'decimal',
+        minimumFractionDigits: fractionDigits,
+    }).format(number);
+};
+exports.formatToDecimal = formatToDecimal;
+/**
+ * Formatting a number to percent
+ * @param {IDePeParans} object
+ * @returns
+ */
+const formatToPercent = ({ locales = constans_1.Locales.CO, fractionDigits = 0, number, }) => {
+    return new Intl.NumberFormat(locales, {
+        style: 'percent',
+        minimumFractionDigits: fractionDigits,
+    }).format(number);
+};
+exports.formatToPercent = formatToPercent;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9saWIvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEseUNBQStDO0FBRS9DOzs7O0dBSUc7QUFDSSxNQUFNLGdCQUFnQixHQUFHLENBQUMsRUFDL0IsT0FBTyxHQUFHLGtCQUFPLENBQUMsRUFBRSxFQUNwQixRQUFRLEdBQUcsbUJBQVEsQ0FBQyxHQUFHLEVBQ3ZCLGNBQWMsR0FBRyxDQUFDLEVBQ2xCLE1BQU0sR0FDVSxFQUFFLEVBQUU7SUFDcEIsT0FBTyxJQUFJLElBQUksQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFO1FBQ3BDLEtBQUssRUFBRSxVQUFVO1FBQ2pCLFFBQVEsRUFBRSxRQUFRO1FBQ2xCLHFCQUFxQixFQUFFLGNBQWM7S0FDdEMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsQ0FBQztBQUNwQixDQUFDLENBQUM7QUFYVyxRQUFBLGdCQUFnQixvQkFXM0I7QUFFRjs7OztHQUlHO0FBQ0ksTUFBTSxlQUFlLEdBQUcsQ0FBQyxFQUM5QixPQUFPLEdBQUcsa0JBQU8sQ0FBQyxFQUFFLEVBQ3BCLGNBQWMsR0FBRyxDQUFDLEVBQ2xCLE1BQU0sR0FDTSxFQUFFLEVBQUU7SUFDaEIsT0FBTyxJQUFJLElBQUksQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFO1FBQ3BDLEtBQUssRUFBRSxTQUFTO1FBQ2hCLHFCQUFxQixFQUFFLGNBQWM7S0FDdEMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsQ0FBQztBQUNwQixDQUFDLENBQUM7QUFUVyxRQUFBLGVBQWUsbUJBUzFCO0FBRUY7Ozs7R0FJRztBQUNJLE1BQU0sZUFBZSxHQUFHLENBQUMsRUFDOUIsT0FBTyxHQUFHLGtCQUFPLENBQUMsRUFBRSxFQUNwQixjQUFjLEdBQUcsQ0FBQyxFQUNsQixNQUFNLEdBQ00sRUFBRSxFQUFFO0lBQ2hCLE9BQU8sSUFBSSxJQUFJLENBQUMsWUFBWSxDQUFDLE9BQU8sRUFBRTtRQUNwQyxLQUFLLEVBQUUsU0FBUztRQUNoQixxQkFBcUIsRUFBRSxjQUFjO0tBQ3RDLENBQUMsQ0FBQyxNQUFNLENBQUMsTUFBTSxDQUFDLENBQUM7QUFDcEIsQ0FBQyxDQUFDO0FBVFcsUUFBQSxlQUFlLG1CQVMxQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEN1cnJlbmN5LCBMb2NhbGVzIH0gZnJvbSAnLi9jb25zdGFucyc7XG5cbi8qKlxuICogRm9ybWF0dGluZyBhIGN1cnJlbmN5XG4gKiBAcGFyYW0ge0lDdXJyZW5jeVBhcmFuc30gb2JqZWN0XG4gKiBAcmV0dXJucyB7c3RyaW5nfSBzdHJpbmcuIEV4YW1wbGU6ICQgOTguODkwLjA5OCwwMFxuICovXG5leHBvcnQgY29uc3QgZm9ybWF0VG9DdXJyZW5jeSA9ICh7XG4gIGxvY2FsZXMgPSBMb2NhbGVzLkNPLFxuICBjdXJyZW5jeSA9IEN1cnJlbmN5LkNPUCxcbiAgZnJhY3Rpb25EaWdpdHMgPSAwLFxuICBudW1iZXIsXG59OiBJQ3VycmVuY3lQYXJhbnMpID0+IHtcbiAgcmV0dXJuIG5ldyBJbnRsLk51bWJlckZvcm1hdChsb2NhbGVzLCB7XG4gICAgc3R5bGU6ICdjdXJyZW5jeScsXG4gICAgY3VycmVuY3k6IGN1cnJlbmN5LFxuICAgIG1pbmltdW1GcmFjdGlvbkRpZ2l0czogZnJhY3Rpb25EaWdpdHMsXG4gIH0pLmZvcm1hdChudW1iZXIpO1xufTtcblxuLyoqXG4gKiBGb3JtYXR0aW5nIGEgbnVtYmVyIHRvIGRlY2ltYWxcbiAqIEBwYXJhbSB7SURlUGVQYXJhbnN9IG9iamVjdFxuICogQHJldHVybnMgc3RyaW5nXG4gKi9cbmV4cG9ydCBjb25zdCBmb3JtYXRUb0RlY2ltYWwgPSAoe1xuICBsb2NhbGVzID0gTG9jYWxlcy5DTyxcbiAgZnJhY3Rpb25EaWdpdHMgPSAwLFxuICBudW1iZXIsXG59OiBJRGVQZVBhcmFucykgPT4ge1xuICByZXR1cm4gbmV3IEludGwuTnVtYmVyRm9ybWF0KGxvY2FsZXMsIHtcbiAgICBzdHlsZTogJ2RlY2ltYWwnLFxuICAgIG1pbmltdW1GcmFjdGlvbkRpZ2l0czogZnJhY3Rpb25EaWdpdHMsXG4gIH0pLmZvcm1hdChudW1iZXIpO1xufTtcblxuLyoqXG4gKiBGb3JtYXR0aW5nIGEgbnVtYmVyIHRvIHBlcmNlbnRcbiAqIEBwYXJhbSB7SURlUGVQYXJhbnN9IG9iamVjdFxuICogQHJldHVybnNcbiAqL1xuZXhwb3J0IGNvbnN0IGZvcm1hdFRvUGVyY2VudCA9ICh7XG4gIGxvY2FsZXMgPSBMb2NhbGVzLkNPLFxuICBmcmFjdGlvbkRpZ2l0cyA9IDAsXG4gIG51bWJlcixcbn06IElEZVBlUGFyYW5zKSA9PiB7XG4gIHJldHVybiBuZXcgSW50bC5OdW1iZXJGb3JtYXQobG9jYWxlcywge1xuICAgIHN0eWxlOiAncGVyY2VudCcsXG4gICAgbWluaW11bUZyYWN0aW9uRGlnaXRzOiBmcmFjdGlvbkRpZ2l0cyxcbiAgfSkuZm9ybWF0KG51bWJlcik7XG59O1xuIl19

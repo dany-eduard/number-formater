@@ -1,3 +1,4 @@
+import { IObjectString } from "./interfaces/interfaces";
 
 export const Currency: IObjectString = {
   BRL: 'BRL',

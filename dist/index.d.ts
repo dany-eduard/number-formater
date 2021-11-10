@@ -1,19 +1,23 @@
+import { ICurrencyParans, IParams } from './interfaces/interfaces';
 /**
  * Formatting a currency
- * @param {ICurrencyParans} object
- * @returns {string} string. Example: $ 98.890.098,00
+ * @param number
+ * @param {ICurrencyParans} object optional
+ * @returns {string} string
  */
-export declare const formatToCurrency: ({ locales, currency, fractionDigits, number, }: ICurrencyParans) => string;
+export declare const formatToCurrency: (number: number, { locales, currency, fractionDigits }?: ICurrencyParans) => string;
 /**
  * Formatting a number to decimal
- * @param {IDePeParans} object
+ * @param number
+ * @param {IParams} object optional
  * @returns string
  */
-export declare const formatToDecimal: ({ locales, fractionDigits, number, }: IDePeParans) => string;
+export declare const formatToDecimal: (number: number, { locales, fractionDigits }?: IParams) => string;
 /**
  * Formatting a number to percent
- * @param {IDePeParans} object
- * @returns
+ * @param number
+ * @param {IParams} object optional
+ * @returns string
  */
-export declare const formatToPercent: ({ locales, fractionDigits, number, }: IDePeParans) => string;
+export declare const formatToPercent: (number: number, { locales, fractionDigits }?: IParams) => string;
 //# sourceMappingURL=index.d.ts.map

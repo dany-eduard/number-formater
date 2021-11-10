@@ -1,5 +1,12 @@
 # Number Formatter
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/dany-eduard/number-formater)
+![NPM](https://img.shields.io/npm/l/number-formater)
+
+
+[![NPM](https://nodei.co/npm/number-formater.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/number-formater/)
+
+
 [**`number-formater`**](https://www.npmjs.com/package/number-formater) is a JavaScript library built to make it faster and more efficient to use the ECMAScript (Intl) API for number formatting.
 
 ## Install

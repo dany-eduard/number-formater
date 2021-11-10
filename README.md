@@ -1,4 +1,4 @@
-# number-ormater
+# number-formater
 
 **number-formater** is a JavaScript library built to make it faster and more efficient to use the ECMAScript (Intl) API for number formatting.
 

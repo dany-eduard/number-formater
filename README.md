@@ -1,11 +1,11 @@
-# number-formater
+# Number Formatter
 
-**number-formater** is a JavaScript library built to make it faster and more efficient to use the ECMAScript (Intl) API for number formatting.
+[**`number-formater`**](https://www.npmjs.com/package/number-formater) is a JavaScript library built to make it faster and more efficient to use the ECMAScript (Intl) API for number formatting.
 
 ## Install
 
 ```zsh
-npm i @dany-eduard/number-formater
+npm i number-formater
 ```
 
 ## Usage
@@ -15,40 +15,48 @@ My main idea is that this library will be used client-side in JavaScript project
 ### Format currencies  
 
 ```ts
-import { formatToCurrency } from '@dany-eduard/number-formater'
+import { formatToCurrency } from 'number-formater'
 
-const price = formatToCurrency({
+const currency = formatToCurrency(988900);
+console.log(currency) // $ 988.900
+
+
+const currencyCOL = formatToCurrency(988900, {
   locales: 'es-CO',
   currency: 'COP',
   fractionDigits: 2,
-  number: 2199900,
-})
+});
+
+console.log(currencyCOL); // $ 988.900,00
+
+
+const currencyUS = formatToCurrency(988900, {
+  locales: 'en-US',
+  currency: 'USD',
+  fractionDigits: 2,
+});
+
+console.log(currencyUS); // $988,900.00
 
 ```  
 
 ### Format percent
 
 ```ts
-import { formatToPercent } from '@dany-eduard/number-formater'
+import { formatToPercent } from 'number-formater'
 
-const value = formatToPercent({
-  locales: 'es-CO',
-  fractionDigits: 2,
-  number: 848,
-})
+const percent = formatToPercent(0.9);
+console.log(percent); // 90 %
 
 ```  
 
 ### Format decimal number
 
 ```ts
-import { formatToDecimal } from '@dany-eduard/number-formater'
+import { formatToDecimal } from 'number-formater'
 
-const value = formatToDecimal({
-  locales: 'es-CO',
-  fractionDigits: 4,
-  number: 84.8,
-})
+const decimal = formatToDecimal(8277.0);
+console.log(decimal); // 8.277
 
 ```  
 
@@ -61,5 +69,5 @@ This project is open source and is protected under the MIT license, you can feel
 - [Intl.NumberFormat - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat)
 - [Currency-list](https://github.dev/webplan-pro/currency-list/blob/main/src/currency-list.json)
 
-## Impiration
+## Inspiration
 - [Darle formato a monedas con JavaScript - Tato](https://tato.la/darle-formato-a-monedas-con-javascript/)

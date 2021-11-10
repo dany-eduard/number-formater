@@ -1,16 +1,20 @@
 import { Currency, Locales } from './constans';
+import { ICurrencyParans, IParams } from './interfaces/interfaces';
 
 /**
  * Formatting a currency
- * @param {ICurrencyParans} object
- * @returns {string} string. Example: $ 98.890.098,00
+ * @param number
+ * @param {ICurrencyParans} object optional
+ * @returns {string} string
  */
-export const formatToCurrency = ({
-  locales = Locales.CO,
-  currency = Currency.COP,
-  fractionDigits = 0,
-  number,
-}: ICurrencyParans) => {
+export const formatToCurrency = (
+  number: number,
+  { locales, currency, fractionDigits }: ICurrencyParans = {
+    locales: Locales.CO,
+    currency: Currency.COP,
+    fractionDigits: 0,
+  }
+) => {
   return new Intl.NumberFormat(locales, {
     style: 'currency',
     currency: currency,
@@ -20,14 +24,17 @@ export const formatToCurrency = ({
 
 /**
  * Formatting a number to decimal
- * @param {IDePeParans} object
+ * @param number
+ * @param {IParams} object optional
  * @returns string
  */
-export const formatToDecimal = ({
-  locales = Locales.CO,
-  fractionDigits = 0,
-  number,
-}: IDePeParans) => {
+export const formatToDecimal = (
+  number: number,
+  { locales, fractionDigits }: IParams = {
+    locales: Locales.CO,
+    fractionDigits: 0,
+  }
+) => {
   return new Intl.NumberFormat(locales, {
     style: 'decimal',
     minimumFractionDigits: fractionDigits,
@@ -36,14 +43,17 @@ export const formatToDecimal = ({
 
 /**
  * Formatting a number to percent
- * @param {IDePeParans} object
- * @returns
+ * @param number
+ * @param {IParams} object optional
+ * @returns string
  */
-export const formatToPercent = ({
-  locales = Locales.CO,
-  fractionDigits = 0,
-  number,
-}: IDePeParans) => {
+export const formatToPercent = (
+  number: number,
+  { locales, fractionDigits }: IParams = {
+    locales: Locales.CO,
+    fractionDigits: 0,
+  }
+) => {
   return new Intl.NumberFormat(locales, {
     style: 'percent',
     minimumFractionDigits: fractionDigits,
